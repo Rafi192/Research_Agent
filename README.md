@@ -31,14 +31,14 @@ User: "Write me a Python function to reverse a linked list"
 
 Real example — Code Review Agent:
 
-Pass 1 (Generate): LLM writes a sorting algorithm
-Pass 2 (Reflect):  LLM reviews it — "O(n²) complexity, won't scale"
-Pass 3 (Revise):   LLM rewrites using merge sort
-Pass 4 (Reflect):  "Looks good, edge cases covered"
+Pass 1 (Generate): LLM writes a sorting algorithm <br>
+Pass 2 (Reflect):  LLM reviews it — "O(n²) complexity, won't scale" <br>
+Pass 3 (Revise):   LLM rewrites using merge sort<br>
+Pass 4 (Reflect):  "Looks good, edge cases covered"<br>
 → Done
 
 2. Tool Use
-The core idea: The LLM cannot browse the internet, run code, or query a database on its own. Tools are external functions the LLM can call by name, get results back from, and reason over. The LLM acts as the brain; tools are its hands.
+The core idea: The LLM cannot browse the internet, run code, or query a database on its own. Tools are external functions the LLM can call by name, get results back from, and reason over. The LLM acts as the brain; tools are its hands. <br>
 For example --> : Like a brilliant analyst who can't leave their desk, but can ask assistants to go fetch data, run calculations, and come back with results.
 
 <pre>
@@ -65,3 +65,24 @@ User: "What is the current stock price of Apple?"
 
 
 </pre>
+
+The reasearch agent example :
+
+Query: "Summarize the latest research on LLM hallucination"
+
+Step 1 → LLM calls web_search("LLM hallucination 2025 research paper")<br>
+Step 2 → LLM calls fetch_url("https://arxiv.org/abs/2504.17550")<br>
+Step 3 → LLM calls  summarize_text(the_scraped_content)<br>
+Step 4 → LLM calls write_report(all_findings)<br>
+→ output done.
+
+The ReAct pattern (Reason + Act) drives this:
+Thought:  "I need to find recent papers"
+Action:   web_search("LLM hallucination 2025")
+Observe:  [search results returned]
+Thought:  "I should read this arxiv link"
+Action:   fetch_url("https://arxiv.org/abs/2504.17550")
+Observe:  [page content returned]
+Thought:  "I have enough. I'll write the report now."
+Action:   write_report(...)
+→ Final Answer
