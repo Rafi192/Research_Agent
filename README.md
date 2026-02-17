@@ -76,13 +76,13 @@ Step 3 → LLM calls  summarize_text(the_scraped_content)<br>
 Step 4 → LLM calls write_report(all_findings)<br>
 → output done.
 
-The ReAct pattern (Reason + Act) drives this:
-Thought:  "I need to find recent papers"
-Action:   web_search("LLM hallucination 2025")
-Observe:  [search results returned]
-Thought:  "I should read this arxiv link"
-Action:   fetch_url("https://arxiv.org/abs/2504.17550")
-Observe:  [page content returned]
-Thought:  "I have enough. I'll write the report now."
-Action:   write_report(...)
+The ReAct pattern (Reason + Act) drives this:<br>
+Thought:  "I need to find recent papers"<br>
+Action:   web_search("LLM hallucination 2025")<br>
+Observe:  [search results returned] <br>
+Thought:  "I should read this arxiv link" <br>
+Action:   fetch_url("https://arxiv.org/abs/2504.17550") <br>
+Observe:  [page content returned] <br>
+Thought:  "I have enough. I'll write the report now." <br>
+Action:   write_report(...)<br>
 → Final Answer
