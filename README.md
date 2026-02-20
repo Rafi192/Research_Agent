@@ -37,7 +37,7 @@ Pass 3 (Revise):   LLM rewrites using merge sort<br>
 Pass 4 (Reflect):  "Looks good, edge cases covered"<br>
 → Done
 
-2. Tool Use
+2. Tool Use: <br>
 The core idea: The LLM cannot browse the internet, run code, or query a database on its own. Tools are external functions the LLM can call by name, get results back from, and reason over. The LLM acts as the brain; tools are its hands. <br>
 For example --> : Like a brilliant analyst who can't leave their desk, but can ask assistants to go fetch data, run calculations, and come back with results.
 
@@ -118,3 +118,20 @@ user input: ""Write a market research report on EV companies."
                         Final Report  
 
 </pre>
+
+b. Dynamic Replanning - Plan , Execute step 1, evaluate, replan if needed <br>
+
+<pre>
+               Plan: [Search → Summarize → Report] <br>
+                           │
+            Execute: Search → "No results found for the specific query!" <br>
+                           │
+            Replan:  "Broaden the search query and try Wikipedia instead" <br>
+                           │
+            Execute: Wikipedia → Results found <br>
+                           │
+               Continue: Summarize → Report <br>
+
+</pre>
+
+
