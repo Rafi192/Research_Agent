@@ -115,7 +115,7 @@ user input: ""Write a market research report on EV companies."
                      in sequence (or parallel)
                               │
                               ▼
-                        Final Report  
+                        Final output  
 
 </pre>
 
@@ -133,5 +133,28 @@ b. Dynamic Replanning - Plan , Execute step 1, evaluate, replan if needed <br>
                Continue: Summarize → Report <br>
 
 </pre>
+
+
+
+### Real Example - Trip planning agent
+
+<pre>
+Goal : "plan a 5 day trip to japan for 2 people, my budget is under $3000"
+
+Planner produces: 
+   Task 1: Search flights Torronto -> Narita, Tokyo
+   Task 2: Search hotels in tokyo - 2 people, 3 nights
+   Task 3: Serach hotels in kyoto -> 2 nights
+   Task 4: Find top attractions for each city including best foods
+   Task 5: Estimate daily food budget
+   Task 6: Check if total fits under $3000
+   Task 7: If over budget, find cheaper alternatives
+   Task 8: Write Travel plan 
+
+</pre>
+
+### when should we use planning?
+-->  Complex multi-step goals, tasks with dependencies, scenarios where order of execution matters, or where failures need graceful replanning.
+
 
 
