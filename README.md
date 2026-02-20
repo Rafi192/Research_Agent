@@ -1,7 +1,7 @@
 # Research_Agent
 
 ### Agentic AI Design Patterns
-1. Reflection
+1. Reflection<br>
 The core idea: The agent critiques and improves its own output before returning it to the user. Instead of a single LLM pass, it runs multiple passes where one "voice" generates and another "voice" evaluates.
 Analogy: Like a writer who drafts an essay, then rereads it as a critic, then revises based on their own critique.
 
@@ -86,3 +86,35 @@ Observe:  [page content returned] <br>
 Thought:  "I have enough. I'll write the report now." <br>
 Action:   write_report(...)<br>
 → Final Answer
+
+3. Planning <br>
+
+Instead of reacting step by step, the agent first decomposes a complex a goal into a structured plan of subtasks, then executes them. Sometimes reordering or replanning in the mid-way if something fails. 
+
+- There are two main main process in planning. 
+a. Plan and then execute : make a full plan upfront and then run it. <br>
+
+for example ,
+ <br>
+
+<pre>
+user input: ""Write a market research report on EV companies."
+                              │
+                              ▼
+               ┌──────────────────────────────────┐
+               │           PLANNER LLM            │
+               │  1. Identify top 5 EV companies  │
+               │  2. Search financials for each   │
+               │  3. Search recent news for each  │
+               │  4. Compare and contrast         │
+               │  5. Write final report           │
+               └──────────────────────────────────┘
+                              │
+                              ▼
+                     EXECUTOR runs each step
+                     in sequence (or parallel)
+                              │
+                              ▼
+                        Final Report  
+
+</pre>
