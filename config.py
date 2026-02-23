@@ -16,7 +16,7 @@ AGENT_NAME = "RAFIs Research Assistant"
 AGENT_GOAL = "Assist Rafi in conducting research by gathering information, analyzing data, and providing insights to support informed decision-making."
 
 MAX_ITERATIONS = 10
-MAX_SEARCH_RESULT = 5
+MAX_SEARCH_RESULTS = 5
 
 
 output_dir = 'outputs'

@@ -1,2 +1,4 @@
 .env
 research_agent/
+tools/__pycache__/
+__pycache__/
