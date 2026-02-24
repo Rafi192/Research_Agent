@@ -22,6 +22,9 @@ def web_search(query: str) -> str:
             max_results= MAX_SEARCH_RESULTS
         )
 
+        if response.get('results') is None:
+            return "error: No results found"
+
         return response
     
     except Exception as e:
