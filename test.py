@@ -1,6 +1,6 @@
 # test_config.py
 import config
-from tools.tools import web_search
+from tools.tools import web_search, wikipedia_search
 
 print("Testing config.py imports...")
 print(f"TAVILY_API_KEY: {config.TAVILY_API_KEY[:10] if config.TAVILY_API_KEY else 'NOT FOUND'}...")
@@ -9,3 +9,5 @@ print(f"MAX_ITERATIONS: {config.MAX_ITERATIONS}")
 print(f"AGENT_NAME: {config.AGENT_NAME}")
 print(web_search("What is the capital of France?"))
 print("✅ Config loaded successfully!")
+
+print(wikipedia_search("creator of python programming language"))
